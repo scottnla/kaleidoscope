@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxShapes.h"
+#include "ofxShape.h"
 
 class ofxShapeGenerator {
  protected:
@@ -16,12 +16,12 @@ class ofxShapeGenerator {
     circleProbability = circleProb;
   }
   
-  void createShapes(ofxShape shapes[], ofFbo fbo, ofxColorPalette palette) {
+  void createShapes(vector<ofxShape> shapes, ofFbo fbo, ofxColorPalette palette) {
     if(ofRandom(0,1) < pointProbability) {
-      shapes.add(new ofxPoint(fbo, palette));
+      shapes.push_back(new ofxPoint(fbo, palette));
     }
     if (ofRandom(0,1) < circleProbability) {
-      shapes.add(new ofxCircle(fbo, palette));
+      shapes.push_back(new ofxCircle(fbo, palette));
     } 
   }
 };

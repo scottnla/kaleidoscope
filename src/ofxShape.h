@@ -2,14 +2,14 @@
 
 #include "ofMain.h"
 
-class ofxShapes {
+class ofxShape {
  public:
   virtual bool draw(ofFbo fbo) {
   };
 };
 
 
-class ofxPoint : public ofxShapes {
+class ofxPoint : public ofxShape {
  protected:
   static const float MAX_WEIGHT = 7;
   static const float DELTA_WEIGHT = 0.2;
@@ -19,7 +19,7 @@ class ofxPoint : public ofxShapes {
  public:
   ofxPoint(ofFbo fbo, ofxColorPalette palette) {
     x = ofRandom(0, fbo.getWidth());
-    y = ofRandom(o, fbo.getHeight());
+    y = ofRandom(0, fbo.getHeight());
     color = palette.nextColor();
     currentWeight = 0;
   }
@@ -36,7 +36,7 @@ class ofxPoint : public ofxShapes {
 
 };
 
-class ofxCircle : public ofxShapes {
+class ofxCircle : public ofxShape {
  protected:
   static const float MIN_RADIUS = 0.1;
   static const float MAX_RADIUS = 0.4;
@@ -63,6 +63,6 @@ class ofxCircle : public ofxShapes {
     ofSetLineWidth(1.0);
     ofCircle(x, y, currentRadius*r, currentRadius*r);
     fbo.end();
-    reteurn r < 1;
+    return r < 1;
   };
 };
