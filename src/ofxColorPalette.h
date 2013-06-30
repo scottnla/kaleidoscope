@@ -7,9 +7,10 @@ class ofxColorPalette {
   virtual void reset() {
   };
   virtual ofColor nextColor() {
+    return ofColor(0,0,0);
   };
-};
-
+}
+;
 class ofxRandomPalette : public ofxColorPalette {
  public:
   virtual ofColor nextColor() {

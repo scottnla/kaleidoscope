@@ -257,7 +257,8 @@ obj/linux64/Release/src/main.o: src/main.cpp \
  ../../../libs/openFrameworks/video/ofGstVideoPlayer.h \
  ../../../libs/openFrameworks/3d/ofCamera.h \
  ../../../libs/openFrameworks/3d/ofEasyCam.h src/testApp.h \
- src/ofxColorWheelPalette.h src/ofxColorPalette.h
+ src/ofxColorWheelPalette.h src/ofxColorPalette.h src/ofxShapeGenerator.h \
+ src/ofxShape.h
 
 ../../../libs/openFrameworks/ofMain.h:
 
@@ -812,3 +813,7 @@ src/testApp.h:
 src/ofxColorWheelPalette.h:
 
 src/ofxColorPalette.h:
+
+src/ofxShapeGenerator.h:
+
+src/ofxShape.h:

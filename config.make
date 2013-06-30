@@ -10,7 +10,7 @@ OF_ROOT = ../../..
 # for example search paths like:
 # USER_CFLAGS = -I src/objects
 
-USER_CFLAGS = 
+USER_CFLAGS = -std=c++11
 
 
 # USER_LDFLAGS allows to pass custom flags to the linker
@@ -51,6 +51,3 @@ NDK_PLATFORM = android-8
 # linux arm flags
 
 LINUX_ARM7_COMPILER_OPTIMIZATIONS = -march=armv7-a -mtune=cortex-a8 -finline-functions -funroll-all-loops  -O3 -funsafe-math-optimizations -mfpu=neon -ftree-vectorize -mfloat-abi=hard -mfpu=vfp
-
-
-

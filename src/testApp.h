@@ -23,8 +23,8 @@ class testApp : public ofBaseApp{
  protected:		
   static const int BUFFER_SIZE = 200;
   static const int SIDE = 150;
-  static const float MAX_TILE_ROTATION_DELTA = 0.02;
-  static const float MAX_ROTATION_DELTA = 0.008;
+  static constexpr float MAX_TILE_ROTATION_DELTA = 0.02;
+  static constexpr float MAX_ROTATION_DELTA = 0.008;
   static const int RESET_COUNT = 3000;
 
   ofFbo tileBuffer;
@@ -37,10 +37,10 @@ class testApp : public ofBaseApp{
   float rotationDelta;
   int nextReset;
 
-  ofxColorPalette* allPalettes;
-  ofxColorPalette getRandomPalette();
-  ofxShapeGenerator* allShapeGenerators;
-  ofxShapeGenerator getRandomShapeGenerator();
+  vector<ofxColorPalette> allPalettes;
+  ofxColorPalette getRandomPalette(vector<ofxColorPalette> paletteList);
+  vector<ofxShapeGenerator> allShapeGenerators;
+  ofxShapeGenerator getRandomShapeGenerator(vector<ofxShapeGenerator> generatorList);
   void initColorPalettes();
   void initShapeGenerators();
   void reset();

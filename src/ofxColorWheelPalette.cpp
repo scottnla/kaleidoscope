@@ -1,13 +1,16 @@
 #include "ofxColorWheelPalette.h"
 
-ofxColorWheelPalette::ofxColorWheelPalette(float hues[]) {
-  numHues = sizeof(hues);
-  hueOffsets = new float[numHues];
+ofxColorWheelPalette::ofxColorWheelPalette(vector<float> hues) {
+  ofLog() << "Processing new color palette!";
+  ofLog() << "Number of hues: " << hues.size();
   hueOffsets = hues;
+  numHues = hues.size();
 }
 
 ofColor ofxColorWheelPalette::nextColor() {
-  float h = hueValue;
+  ofLog() << "Processing NEXT COLOR";
+  float h = fmod(hueValue + hueOffsets[int(ofRandom(0,hueOffsets.size()))], TWO_PI);
+  ofLog() << "next hue: " << h;
   float s, b;
   ofColor color;
   float coinFlip = ofRandom(0,1);
@@ -33,6 +36,7 @@ ofColor ofxColorWheelPalette::nextColor() {
       b = ofRandom(0,1);
     }
   }
+  ofLog() << h << s << b;
   color.setHsb(h, s, b);
   return color;
 }
@@ -61,4 +65,5 @@ void ofxColorWheelPalette::reset() {
   }
   else {
   }
+  ofLog() << "Resetting color wheel . . . ";
 };
